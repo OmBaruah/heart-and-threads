@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart & Threads Official</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #fdf1f3;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #ff6f91, #ff9671);
+      padding: 0 20px;
+      height: 12vh;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav img {
+      border-radius: 50%;
+      height: 9vh;
+      width: auto;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+
+    li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    li a:hover {
+      color: #ffe6eb;
+      border-bottom: 2px solid #ffe6eb;
+      padding-bottom: 2px;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 30px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: linear-gradient(180deg, #ff6f91, #ff9671);
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1500;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-left: 20px;
+    }
+
+    .side-menu a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .side-menu a:hover {
+      color: #ffe6eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      ul {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav img {
+        height: 7vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="nav-left">
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <img src="Untitled design (1).png" alt="logo">
+    </div>
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Feedback</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      if (sideMenu.style.left === "0px") {
+        sideMenu.style.left = "-250px";
+      } else {
+        sideMenu.style.left = "0px";
+      }
+    }
+  </script>
+
+</body>
+</html>
